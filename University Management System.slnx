@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="University Management System/University Management System.vcxproj" />
+  <Project Path="University Management System/University Management System.vcxproj" Id="7a971c18-a383-4510-b83a-0483c632abda" />
 </Solution>
