@@ -47,6 +47,9 @@ public:
 	virtual void accessUniversitySystem() {
 		cout << getname() << " has no access to the university system" << endl;
 	}
+	virtual void addMember() {
+		cout << "Adding a new member is not implemented for this role." << endl;
+	}
 };
 
 class student : public person {
@@ -87,6 +90,19 @@ public:
 	void accessUniversitySystem() override {
 		cout << getname() << " has access to the university system as a student." << endl;
 	}
+	void addMember() override {
+		ofstream file("university_members.csv", ios::app);
+		if (!file.is_open()) {
+			cout << "Error opening file" << endl;
+		}
+		else {
+			file << "Student," << getname() << "," << getid() << "," << getage() << "," << getmajor() << "," << getgpa() << "," << getcompletedCredits() << endl;
+		}
+		cout << "New student member added to the university_members.csv file." << endl;
+		displayInfo();
+
+		file.close();
+	}
 };
 
 class graduateStudent : public student {
@@ -123,6 +139,18 @@ public:
 	}
 	void accessUniversitySystem() override {
 		cout << getname() << " has access to the university system as a graduate student." << endl;
+	}
+	void addMember() override {
+		ofstream file("university_members.csv", ios::app);
+		if (!file.is_open()) {
+			cout << "Error opening file" << endl;
+		}
+		else {
+			file << "GraduateStudent," << getname() << "," << getid() << "," << getage() << "," << getmajor() << "," << getgpa() << "," << getcompletedCredits() << "," << getresearchTopic() << "," << getsupervisor() << "," << getmonthlyStipend() << endl;
+		}
+		cout << "New graduate student member added to the university_members.csv file." << endl;
+		displayInfo();
+		file.close();
 	}
 };
 
@@ -178,6 +206,18 @@ public:
 	void accessUniversitySystem() override {
 		cout << "Dr. " << getname() << " has access to the university system as a professor." << endl;
 	}
+	void addMember() override {
+		ofstream file("university_members.csv", ios::app);
+		if (!file.is_open()) {
+			cout << "Error opening file" << endl;
+		}
+		else {
+			file << "Professor," << getname() << "," << getid() << "," << getage() << "," << getdepartment() << "," << getsalary() << "," << getcoursesTaught() << endl;
+		}
+		cout << "New professor member added to the university_members.csv file." << endl;
+		displayInfo();
+		file.close();
+	}
 };
 
 class staff : public person {
@@ -231,6 +271,18 @@ public:
 	}
 	void accessUniversitySystem() override {
 		cout << getname() << " has access to the university system as a staff member." << endl;
+	}
+	void addMember() override {
+		ofstream file("university_members.csv", ios::app);
+		if (!file.is_open()) {
+			cout << "Error opening file" << endl;
+		}
+		else {
+			file << "Staff," << getname() << "," << getid() << "," << getage() << "," << getdepartment() << "," << getposition() << "," << getsalary() << endl;
+		}
+		cout << "New staff member added to the university_members.csv file." << endl;
+		displayInfo();
+		file.close();
 	}
 };
 
@@ -379,6 +431,11 @@ int main(){
 	cout << "--> Enter your choice: ";
 	cin >> choice;
 
+	while (choice < 1 || choice > 7) {
+		cout << "Invalid choice. Please enter a number between 1 and 7: ";
+		cin >> choice;
+	}
+
 	if (choice == 1) {
 		for (int i = 0; i < memberCount; i++) {
 			universityMembers[i]->displayInfo();
@@ -440,12 +497,14 @@ int main(){
 		
 		if (newRole == "Student") {
 			cout << "Enter major: ";
-			cin >> newMajor;
+			cin.ignore();
+			getline(cin, newMajor);
 			cout << "Enter GPA: ";
 			cin >> newGpa;
 			cout << "Enter completed credits: ";
 			cin >> newCompletedCredits;
 			universityMembers[memberCount] = new student(newName, newAge, newId, newMajor, newGpa, newCompletedCredits);
+			universityMembers[memberCount]->addMember();
 		}
 		else if (newRole == "GraduateStudent") {
 			cout << "Enter major: ";
@@ -462,6 +521,7 @@ int main(){
 			cout << "Enter monthly stipend: ";
 			cin >> newMonthlyStipend;
 			universityMembers[memberCount] = new graduateStudent(newName, newAge, newId, newMajor, newGpa, newCompletedCredits, newResearchTopic, newSupervisor, newMonthlyStipend);
+			universityMembers[memberCount]->addMember();
 		}
 		else if (newRole == "Professor") {
 			cout << "Enter department: ";
@@ -473,6 +533,7 @@ int main(){
 			cin.ignore();
 			getline(cin, newCoursesTaught);
 			universityMembers[memberCount] = new professor(newName, newAge, newId, newDepartment, newSalary, newCoursesTaught);
+			universityMembers[memberCount]->addMember();
 		}
 		else if (newRole == "Staff") {
 			cout << "Enter department: ";
@@ -483,6 +544,7 @@ int main(){
 			cout << "Enter salary: ";
 			cin >> newSalary;
 			universityMembers[memberCount] = new staff(newName, newAge, newId, newDepartment, newPosition, newSalary);
+			universityMembers[memberCount]->addMember();
 		}
 		else {
 			memberCount--;
@@ -493,8 +555,9 @@ int main(){
 	else if (choice == 7) {
 		cout << "Exiting the program." << endl;
 	}
-
+	
 	
 	file.close();
 	return 0;
 }
+
