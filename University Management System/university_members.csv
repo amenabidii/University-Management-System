@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Student,Amen Abidi,900244027,21,Data Science,3.7,65,,,,,,,
 Student,Ahmed Hassan,900245031,22,Computer Science,3.42,72,,,,,,,
 Student,Sara Nabil,900245044,20,Business Administration,3.85,54,,,,,,,
@@ -26,3 +27,33 @@ Staff,Rania Fawzy,700245046,34,,,,,,,Finance,76000,,Payroll Specialist
 Staff,Khaled Sobhy,700245053,45,,,,,,,Facilities,72000,,Facilities Manager
 Staff,Heba Samy,700245067,33,,,,,,,Career Center,65000,,Career Advisor
 Student,Mohamed Ahmed,900213244,21,Political Science,3.74,76
+=======
+role,name,id,age,major,gpa,completed_credits,research_topic,supervisor,monthly_stipend,department,salary,courses_taught,position
+Student,Amen Abidi,900244027,21,Data Science,3.7,65,,,,,,,
+Student,Ahmed Hassan,900245031,22,Computer Science,3.42,72,,,,,,,
+Student,Sara Nabil,900245044,20,Business Administration,3.85,54,,,,,,,
+Student,Youssef Ali,900245061,19,Mechanical Engineering,3.18,36,,,,,,,
+Student,Mariam Adel,900245077,21,Economics,3.91,69,,,,,,,
+Student,Omar Khaled,900245083,23,Political Science,3.26,88,,,,,,,
+Student,Lina Samir,900245096,20,Architecture,3.61,49,,,,,,,
+Student,Karim Mostafa,900245102,22,Accounting,3.33,76,,,,,,,
+GraduateStudent,Nour Ibrahim,910230011,25,Computer Science,3.88,120,Machine Learning for Healthcare,Dr. Wael Mansour,12000,,,,
+GraduateStudent,Adam Fathy,910230024,27,Data Science,3.76,126,Urban Mobility Analytics,Dr. Salma Hassan,13500,,,,
+GraduateStudent,Farah Mahmoud,910230037,24,Economics,3.94,118,Labor Market Inequality,Dr. Hany Saeed,11000,,,,
+GraduateStudent,Tarek Sameh,910230041,28,Physics,3.69,132,Quantum Materials,Dr. Ibrahim Nassar,14000,,,,
+GraduateStudent,Jana Emad,910230058,26,Psychology,3.82,124,Social Media and Attention,Dr. Reem Adel,11500,,,,
+Professor,Ibrahim Nassar,800245011,52,,,,,,,Physics,100000,Physics 1 | Physics 2 | Physics Lab,
+Professor,Salma Hassan,800245018,44,,,,,,,Computer Science,92000,Data Structures | Algorithms | AI,
+Professor,Wael Mansour,800245026,49,,,,,,,Computer Science,98000,OOP | Software Engineering | Machine Learning,
+Professor,Hany Saeed,800245033,55,,,,,,,Economics,105000,Microeconomics | Labor Economics,
+Professor,Reem Adel,800245049,46,,,,,,,Psychology,90000,Cognitive Psychology | Research Methods,
+Professor,Mona Farid,800245052,51,,,,,,,Accounting,97000,Financial Accounting | Managerial Accounting,
+Staff,Mohamed Tarek,700245012,35,,,,,,,Administration,80000,,HR Manager
+Staff,Dina Ashraf,700245019,31,,,,,,,Admissions,62000,,Admissions Officer
+Staff,Hassan Magdy,700245025,42,,,,,,,Information Technology,85000,,Systems Administrator
+Staff,Nada Sherif,700245030,29,,,,,,,Student Affairs,58000,,Student Services Coordinator
+Staff,Mahmoud Essam,700245038,39,,,,,,,Library,67000,,Library Supervisor
+Staff,Rania Fawzy,700245046,34,,,,,,,Finance,76000,,Payroll Specialist
+Staff,Khaled Sobhy,700245053,45,,,,,,,Facilities,72000,,Facilities Manager
+Staff,Heba Samy,700245067,33,,,,,,,Career Center,65000,,Career Advisor
+>>>>>>> 2af264fd34c29a850ad19ac6df6cb291b3a790cb
